@@ -10,8 +10,8 @@ public class DemoController {
 
     @GetMapping
     public String getDemo(){
-        System.out.println("Hello Demo GIT ACTION");
-        return "Hello Demo GIT ACTION V3";
+        System.out.println("Hello Demo GIT ACTION V4");
+        return "Hello Demo GIT ACTION V4";
     }
 
 }
