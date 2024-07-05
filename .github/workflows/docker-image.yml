@@ -34,9 +34,3 @@ jobs:
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/demo-git-action:latest
 
-      - name: Tag Docker image with commit SHA
-        run: |
-          IMAGE_TAG=${GITHUB_SHA}
-          docker tag ${{ secrets.DOCKER_USERNAME }}/demo-git-action:latest ${{ secrets.DOCKER_USERNAME }}/demo-git-actio:${IMAGE_TAG}
-          docker push ${{ secrets.DOCKER_USERNAME }}/demo-git-action:${IMAGE_TAG}
-
