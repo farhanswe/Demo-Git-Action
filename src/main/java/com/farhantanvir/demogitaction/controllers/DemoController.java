@@ -10,6 +10,7 @@ public class DemoController {
 
     @GetMapping
     public String getDemo(){
+        System.out.println("Hello");
         System.out.println("Hello Demo GIT ACTION V6");
         return "Hello Demo GIT ACTION V6";
     }
