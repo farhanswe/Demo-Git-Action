@@ -34,6 +34,15 @@ jobs:
       - name: Push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/demo-git-action:latest
 
+      - name: Stop and remove existing container
+        run: |
+          if [ "$(docker ps -q -f demo-git-action)" ]; then
+            docker stop demo-git-action
+          fi
+          if [ "$(docker ps -aq -f demo-git-action)" ]; then
+            docker rm demo-git-action
+          fi
+
       - name: Run Docker container
         run: docker run -d --name demo-git-action -p 8081:8081 ${{ secrets.DOCKER_USERNAME }}/demo-git-action:latest
 
