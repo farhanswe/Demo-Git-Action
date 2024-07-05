@@ -36,10 +36,10 @@ jobs:
 
       - name: Stop and remove existing container
         run: |
-          if [ "$(docker ps -q -f demo-git-action)" ]; then
+          if [ "$(docker ps -q -f name=demo-git-action)" ]; then
             docker stop demo-git-action
           fi
-          if [ "$(docker ps -aq -f demo-git-action)" ]; then
+          if [ "$(docker ps -aq -f name=demo-git-action)" ]; then
             docker rm demo-git-action
           fi
 
